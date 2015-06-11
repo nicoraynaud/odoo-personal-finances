@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_wizard_import_accounting_lines" model="ir.ui.view">
+            <field name="name">view.wizard.import.accounting.lines</field>
+            <field name="model">wizard.import.accounting.lines</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Import Accounting Lines" version="7.0">
+                    <field name="state" invisible="1" />
+                    <group col="4" colspan="4" states="choose">
+                        <field name="import"/>
+                    </group>
+                    <group col="1" colspan="4" states="error">
+                        <label string="Impossible to import file. Some errors were encountered when validating the data :"/>
+                        <newline/>
+                    </group>
+                    <group col="1" colspan="4">
+                        <field name="wiz_msg" readonly="1" nolabel="1"/>
+                    </group>
+                    <footer>
+                        <button class="oe_highlight" name="import_data" string="Import" type="object" states="choose"/>
+                        <button class="oe_highlight" name="view_accounting_lines" string="View Lines" type="object" states="success"/>
+                        <label string="or" states="choose,error"/>
+                        <button class="oe_link" special="cancel" string="Cancel" states="choose,error"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window 
+            name="Import Accounting Lines" 
+            res_model="wizard.import.accounting.lines" 
+            src_model="tekinico.accounting.line" 
+            view_mode="form" 
+            target="new"
+            key2="client_action_relate"
+            view_type="form" 
+            id="action_import_tekinico_accounting_lines_events" />
+        
+        <menuitem 
+            id="tekinico_import_accounting_lines_menu"
+            name="Import"
+            parent="tekinico_finances_configuration_menu"
+            action="action_import_tekinico_accounting_lines_events" />
+    </data>
+</openerp>

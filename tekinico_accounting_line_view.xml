@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_tekinico_accounting_line_tree" model="ir.ui.view">
+            <field name="name">tekinico accounting line tree</field>
+            <field name="model">tekinico.accounting.line</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top" colors="blue:state=='new';grey:state=='cancelled'">
+                    <field name="date"/>
+                    <field name="description"/>
+                    <field name="debit"/>
+                    <field name="credit"/>
+                    <field name="category_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_tekinico_accounting_line_filter" model="ir.ui.view">
+            <field name="name">tekinico.accounting.line.select</field>
+            <field name="model">tekinico.accounting.line</field>
+            <field name="arch" type="xml">
+                <search string="Search Accounting lines">
+                   <field name="description"
+                       filter_domain="[('description','ilike',self)]"/>
+                   <field name="category_id" string="Category" filter_domain="[('category_id','ilike', self)]"/>
+                   <field name="debit" string="Debit More Than" filter_domain="[('debit','>=', self)]"/>
+                   <field name="credit" string="Credit More Than" filter_domain="[('credit','>=', self)]"/>
+                   <filter string="This Month" name="thismonth" domain="[('date','&lt;=',(context_today()+relativedelta(day=31)).strftime('%%Y-%%m-%%d')),('date','&gt;=',(context_today()-relativedelta(day=1)).strftime('%%Y-%%m-%%d'))]" help="Current month's transactions"/>
+                   <filter string="This Year" name="thisyear" domain="[('date','&gt;=', time.strftime('%%Y-01-01')),('date','&lt;=',time.strftime('%%Y-12-31'))]" help="Current year's transactions"/>
+                   <separator/>
+                   <group expand="0" string="Group By">
+                       <filter string="Category" domain="[]" context="{'group_by' : 'category_id'}" />
+                       <filter string="State" domain="[]" context="{'group_by' : 'state'}" />
+                       <filter string="Source" domain="[]" context="{'group_by' : 'source'}" />
+                   </group>
+               </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_tekinico_accounting_lines_events">
+            <field name="name">Latest Accounting Lines</field>
+            <field name="res_model">tekinico.accounting.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state', '=', 'new')]</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_all_tekinico_accounting_lines_events">
+            <field name="name">All Accounting Lines</field>
+            <field name="res_model">tekinico.accounting.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menuitems -->
+        <menuitem id="tekinico_accounting_main_menu" name="Personal Finances" sequence="1"/>
+
+        <menuitem 
+            id="tekinico_finances_menu"
+            name="Personal finances"
+            parent="tekinico_accounting_main_menu"
+            sequence="1" />
+
+        <menuitem 
+            id="tekinico_finances_reporting_menu"
+            name="Reporting"
+            parent="tekinico_accounting_main_menu"
+            sequence="2" />
+
+
+        <menuitem 
+            id="tekinico_finances_configuration_menu"
+            name="Configuration"
+            parent="tekinico_accounting_main_menu"
+            sequence="3" />
+
+        <menuitem 
+            id="tekinico_accounting_lines_menu"
+            name="Accounting Lines"
+            parent="tekinico_finances_menu"
+            action="action_tekinico_accounting_lines_events" />
+
+        <menuitem 
+            id="tekinico_all_accounting_lines_menu"
+            name="All Accounting Lines"
+            parent="tekinico_finances_menu"
+            action="action_all_tekinico_accounting_lines_events" />
+    </data>
+</openerp>

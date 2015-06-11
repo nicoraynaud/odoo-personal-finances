@@ -1,0 +1,434 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * tekinico_personal_finances
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0-20150310\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-06-11 23:16+0000\n"
+"PO-Revision-Date: 2015-06-11 23:16+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tekinico_personal_finances
+#: code:addons/tekinico_personal_finances/wizard/wizard_import_accounting_lines.py:70
+#, python-format
+msgid "%s accounting lines have been created"
+msgstr "%s lignes de compte ont été créées"
+
+#. module: tekinico_personal_finances
+#: model:ir.actions.act_window,help:tekinico_personal_finances.action_tekinico_accounting_categories_form
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to create a new accounting categories.\n"
+"              </p><p>\n"
+"                Manage the accounting categories to better classify them for tracking and analysis purposes.\n"
+"                An accounting line may have several categories and categories have a hierarchical structure: an accounting line with a tag also has the parent tags.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to create a new accounting categories.\n"
+"              </p><p>\n"
+"                Manage the accounting categories to better classify them for tracking and analysis purposes.\n"
+"                An accounting line may have several categories and categories have a hierarchical structure: an accounting line with a tag also has the parent tags.\n"
+"              </p>\n"
+"            "
+
+#. module: tekinico_personal_finances
+#: model:ir.actions.act_window,name:tekinico_personal_finances.action_tekinico_accounting_categories_form
+#: view:tekinico.accounting.category:tekinico_personal_finances.view_accounting_category_list
+#: view:tekinico.accounting.category:tekinico_personal_finances.view_accounting_category_tree
+msgid "Accounting Categories"
+msgstr "Catégories de Compte"
+
+#. module: tekinico_personal_finances
+#: view:tekinico.accounting.category:tekinico_personal_finances.view_accounting_category_form
+msgid "Accounting Category"
+msgstr "Catégorie de Compte"
+
+#. module: tekinico_personal_finances
+#: model:ir.model,name:tekinico_personal_finances.model_tekinico_accounting_line
+msgid "Accounting Line"
+msgstr "Ligne de Compte"
+
+#. module: tekinico_personal_finances
+#: model:ir.model,name:tekinico_personal_finances.model_tekinico_accounting_category
+msgid "Accounting Line Category"
+msgstr "Catégorie de Ligne de Compte"
+
+#. module: tekinico_personal_finances
+#: model:ir.ui.menu,name:tekinico_personal_finances.tekinico_accounting_lines_menu
+#: field:tekinico.accounting.category,accounting_line_ids:0
+msgid "Accounting Lines"
+msgstr "Lignes Non Rapprochées"
+
+#. module: tekinico_personal_finances
+#: model:ir.actions.act_window,name:tekinico_personal_finances.action_reporting_accounting_lines_graph
+#: model:ir.ui.menu,name:tekinico_personal_finances.action_reporting_accounting_lines
+#: view:tekinico.accounting.line:tekinico_personal_finances.tekinico_reporting_accounting_lines_graph
+msgid "Accounting Reporting"
+msgstr "Reporting par Catégories"
+
+#. module: tekinico_personal_finances
+#: field:tekinico.accounting.category,active:0
+msgid "Active"
+msgstr "Active"
+
+#. module: tekinico_personal_finances
+#: model:ir.actions.act_window,name:tekinico_personal_finances.action_all_tekinico_accounting_lines_events
+#: model:ir.ui.menu,name:tekinico_personal_finances.tekinico_all_accounting_lines_menu
+msgid "All Accounting Lines"
+msgstr "Toutes les lignes"
+
+#. module: tekinico_personal_finances
+#: view:wizard.set.category.to.lines:tekinico_personal_finances.set_category_to_multiple_lines_view_id
+msgid "Apply category"
+msgstr "Assigner la Catégorie"
+
+#. module: tekinico_personal_finances
+#: field:tekinico.accounting.balance,balance:0
+#: field:tekinico.accounting.line,balance:0
+msgid "Balance"
+msgstr "Balance"
+
+#. module: tekinico_personal_finances
+#: view:tekinico.accounting.balance:tekinico_personal_finances.tekinico_accounting_balance_graph
+msgid "Balance Reporting"
+msgstr "Reporting Balance"
+
+#. module: tekinico_personal_finances
+#: model:ir.actions.act_window,name:tekinico_personal_finances.action_tekinico_accounting_balance_graph
+#: model:ir.ui.menu,name:tekinico_personal_finances.action_tekinico_accounting_balance
+msgid "Balance reporting"
+msgstr "Reporting Balance"
+
+#. module: tekinico_personal_finances
+#: view:wizard.import.accounting.lines:tekinico_personal_finances.view_wizard_import_accounting_lines
+#: view:wizard.set.category.to.lines:tekinico_personal_finances.set_category_to_multiple_lines_view_id
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: tekinico_personal_finances
+#: selection:tekinico.accounting.line,state:0
+msgid "Cancelled"
+msgstr "Annulé"
+
+#. module: tekinico_personal_finances
+#: model:ir.ui.menu,name:tekinico_personal_finances.tekinico_accounting_category_menu
+msgid "Categories"
+msgstr "Catégories"
+
+#. module: tekinico_personal_finances
+#: view:tekinico.accounting.line:tekinico_personal_finances.view_tekinico_accounting_line_filter
+#: field:tekinico.accounting.line,category_id:0
+#: field:wizard.set.category.to.lines,category_id:0
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: tekinico_personal_finances
+#: field:tekinico.accounting.category,name:0
+msgid "Category Name"
+msgstr "Nom de Catégorie"
+
+#. module: tekinico_personal_finances
+#: field:tekinico.accounting.category,child_ids:0
+msgid "Child Categories"
+msgstr "Catégories Enfants"
+
+#. module: tekinico_personal_finances
+#: model:ir.ui.menu,name:tekinico_personal_finances.tekinico_finances_configuration_menu
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: tekinico_personal_finances
+#: field:tekinico.accounting.category,create_uid:0
+#: field:tekinico.accounting.line,create_uid:0
+#: field:wizard.import.accounting.lines,create_uid:0
+#: field:wizard.set.category.to.lines,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: tekinico_personal_finances
+#: field:tekinico.accounting.category,create_date:0
+#: field:tekinico.accounting.line,create_date:0
+#: field:wizard.import.accounting.lines,create_date:0
+#: field:wizard.set.category.to.lines,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: tekinico_personal_finances
+#: field:tekinico.accounting.line,credit:0
+msgid "Credit"
+msgstr "Crédit"
+
+#. module: tekinico_personal_finances
+#: view:tekinico.accounting.line:tekinico_personal_finances.view_tekinico_accounting_line_filter
+msgid "Credit More Than"
+msgstr "Crédit Supérieur à"
+
+#. module: tekinico_personal_finances
+#: view:tekinico.accounting.line:tekinico_personal_finances.view_tekinico_accounting_line_filter
+msgid "Current month's transactions"
+msgstr "Lignes du mois en cours"
+
+#. module: tekinico_personal_finances
+#: view:tekinico.accounting.balance:tekinico_personal_finances.view_tekinico_accounting_balance_filter
+msgid "Current year's balance"
+msgstr "Balance de l'année en cours"
+
+#. module: tekinico_personal_finances
+#: view:tekinico.accounting.line:tekinico_personal_finances.view_tekinico_accounting_line_filter
+msgid "Current year's transactions"
+msgstr "Lignes de l'année en cours"
+
+#. module: tekinico_personal_finances
+#: field:tekinico.accounting.line,date:0
+msgid "Date"
+msgstr "Date"
+
+#. module: tekinico_personal_finances
+#: field:tekinico.accounting.line,date_created:0
+msgid "Date Created"
+msgstr "Date de Création"
+
+#. module: tekinico_personal_finances
+#: field:tekinico.accounting.line,date_effect:0
+msgid "Date Effect"
+msgstr "Date d'Effet"
+
+#. module: tekinico_personal_finances
+#: field:tekinico.accounting.line,debit:0
+msgid "Debit"
+msgstr "Débit"
+
+#. module: tekinico_personal_finances
+#: view:tekinico.accounting.line:tekinico_personal_finances.view_tekinico_accounting_line_filter
+msgid "Debit More Than"
+msgstr "Débit Supérieur à"
+
+#. module: tekinico_personal_finances
+#: field:tekinico.accounting.line,description:0
+msgid "Description"
+msgstr "Description"
+
+#. module: tekinico_personal_finances
+#: constraint:tekinico.accounting.category:0
+msgid "Error ! You can not create recursive categories."
+msgstr "Erreur ! Vous ne pouvez pas créer de catégories récursives."
+
+#. module: tekinico_personal_finances
+#: field:wizard.import.accounting.lines,import:0
+msgid "File"
+msgstr "Fichier"
+
+#. module: tekinico_personal_finances
+#: field:tekinico.accounting.category,complete_name:0
+msgid "Full Name"
+msgstr "Nom Complet"
+
+#. module: tekinico_personal_finances
+#: selection:tekinico.accounting.line,source:0
+msgid "Generated"
+msgstr "Générée"
+
+#. module: tekinico_personal_finances
+#: view:tekinico.accounting.balance:tekinico_personal_finances.view_tekinico_accounting_balance_filter
+#: view:tekinico.accounting.line:tekinico_personal_finances.view_tekinico_accounting_line_filter
+msgid "Group By"
+msgstr "Grouper Par"
+
+#. module: tekinico_personal_finances
+#: field:tekinico.accounting.balance,id:0
+#: field:tekinico.accounting.category,id:0
+#: field:tekinico.accounting.line,id:0
+#: field:wizard.import.accounting.lines,id:0
+#: field:wizard.set.category.to.lines,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: tekinico_personal_finances
+#: model:ir.ui.menu,name:tekinico_personal_finances.tekinico_import_accounting_lines_menu
+#: view:wizard.import.accounting.lines:tekinico_personal_finances.view_wizard_import_accounting_lines
+msgid "Import"
+msgstr "Importation"
+
+#. module: tekinico_personal_finances
+#: code:addons/tekinico_personal_finances/wizard/wizard_import_accounting_lines.py:74
+#: model:ir.actions.act_window,name:tekinico_personal_finances.action_import_tekinico_accounting_lines_events
+#: view:wizard.import.accounting.lines:tekinico_personal_finances.view_wizard_import_accounting_lines
+#, python-format
+msgid "Import Accounting Lines"
+msgstr "Importer Lignes de Comptes"
+
+#. module: tekinico_personal_finances
+#: view:wizard.import.accounting.lines:tekinico_personal_finances.view_wizard_import_accounting_lines
+msgid "Impossible to import file. Some errors were encountered when validating the data :"
+msgstr "Impossible d'importer le fichier. Il existe des erreurs dans les données :"
+
+#. module: tekinico_personal_finances
+#: field:tekinico.accounting.category,write_uid:0
+#: field:tekinico.accounting.line,write_uid:0
+#: field:wizard.import.accounting.lines,write_uid:0
+#: field:wizard.set.category.to.lines,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: tekinico_personal_finances
+#: field:tekinico.accounting.category,write_date:0
+#: field:tekinico.accounting.line,write_date:0
+#: field:wizard.import.accounting.lines,write_date:0
+#: field:wizard.set.category.to.lines,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: tekinico_personal_finances
+#: model:ir.actions.act_window,name:tekinico_personal_finances.action_tekinico_accounting_lines_events
+msgid "Latest Accounting Lines"
+msgstr "Non Rapprochées"
+
+#. module: tekinico_personal_finances
+#: field:tekinico.accounting.category,parent_left:0
+msgid "Left parent"
+msgstr "Left parent"
+
+#. module: tekinico_personal_finances
+#: selection:tekinico.accounting.line,source:0
+msgid "Manual"
+msgstr "Manuel"
+
+#. module: tekinico_personal_finances
+#: field:wizard.import.accounting.lines,wiz_msg:0
+msgid "Message"
+msgstr "Message"
+
+#. module: tekinico_personal_finances
+#: view:tekinico.accounting.balance:tekinico_personal_finances.view_tekinico_accounting_balance_filter
+#: field:tekinico.accounting.balance,month:0
+msgid "Month"
+msgstr "Mois"
+
+#. module: tekinico_personal_finances
+#: selection:tekinico.accounting.line,state:0
+msgid "New"
+msgstr "Nouvelle"
+
+#. module: tekinico_personal_finances
+#: field:tekinico.accounting.category,parent_id:0
+msgid "Parent Category"
+msgstr "Catégorie Parente"
+
+#. module: tekinico_personal_finances
+#: model:ir.ui.menu,name:tekinico_personal_finances.tekinico_accounting_main_menu
+msgid "Personal Finances"
+msgstr "Personal Finances"
+
+#. module: tekinico_personal_finances
+#: model:ir.ui.menu,name:tekinico_personal_finances.tekinico_finances_menu
+msgid "Personal finances"
+msgstr "Lignes de Compte"
+
+#. module: tekinico_personal_finances
+#: field:tekinico.accounting.line,where:0
+msgid "Place"
+msgstr "Place"
+
+#. module: tekinico_personal_finances
+#: model:ir.ui.menu,name:tekinico_personal_finances.tekinico_finances_reporting_menu
+msgid "Reporting"
+msgstr "Suivi d'activité"
+
+#. module: tekinico_personal_finances
+#: field:tekinico.accounting.category,parent_right:0
+msgid "Right parent"
+msgstr "Right parent"
+
+#. module: tekinico_personal_finances
+#: view:tekinico.accounting.balance:tekinico_personal_finances.view_tekinico_accounting_balance_filter
+msgid "Search Accounting Balance"
+msgstr "Search Accounting Balance"
+
+#. module: tekinico_personal_finances
+#: view:tekinico.accounting.line:tekinico_personal_finances.view_tekinico_accounting_line_filter
+msgid "Search Accounting lines"
+msgstr "Rechercher des Lignes de Compte"
+
+#. module: tekinico_personal_finances
+#: model:ir.actions.act_window,name:tekinico_personal_finances.set_category_to_multiple_lines_act
+#: view:wizard.set.category.to.lines:tekinico_personal_finances.set_category_to_multiple_lines_view_id
+msgid "Set Category"
+msgstr "Assigner Catégorie"
+
+#. module: tekinico_personal_finances
+#: view:tekinico.accounting.line:tekinico_personal_finances.view_tekinico_accounting_line_filter
+#: field:tekinico.accounting.line,source:0
+msgid "Source"
+msgstr "Source"
+
+#. module: tekinico_personal_finances
+#: view:tekinico.accounting.line:tekinico_personal_finances.view_tekinico_accounting_line_filter
+#: field:tekinico.accounting.line,state:0
+#: field:wizard.import.accounting.lines,state:0
+msgid "State"
+msgstr "Statut"
+
+#. module: tekinico_personal_finances
+#: help:tekinico.accounting.category,active:0
+msgid "The active field allows you to hide the category without removing it."
+msgstr "The active field allows you to hide the category without removing it."
+
+#. module: tekinico_personal_finances
+#: view:tekinico.accounting.line:tekinico_personal_finances.view_tekinico_accounting_line_filter
+msgid "This Month"
+msgstr "Mois en cours"
+
+#. module: tekinico_personal_finances
+#: view:tekinico.accounting.balance:tekinico_personal_finances.view_tekinico_accounting_balance_filter
+#: view:tekinico.accounting.line:tekinico_personal_finances.view_tekinico_accounting_line_filter
+msgid "This Year"
+msgstr "Année en cours"
+
+#. module: tekinico_personal_finances
+#: selection:tekinico.accounting.line,state:0
+msgid "Ticked"
+msgstr "Rapprochée"
+
+#. module: tekinico_personal_finances
+#: view:wizard.import.accounting.lines:tekinico_personal_finances.view_wizard_import_accounting_lines
+msgid "View Lines"
+msgstr "Voir Lignes de Compte"
+
+#. module: tekinico_personal_finances
+#: model:ir.model,name:tekinico_personal_finances.model_tekinico_accounting_balance
+msgid "View accounting balance"
+msgstr "Balance de compte"
+
+#. module: tekinico_personal_finances
+#: view:tekinico.accounting.balance:tekinico_personal_finances.view_tekinico_accounting_balance_filter
+#: field:tekinico.accounting.balance,year:0
+msgid "Year"
+msgstr "Année"
+
+#. module: tekinico_personal_finances
+#: selection:wizard.import.accounting.lines,state:0
+msgid "choose"
+msgstr "choose"
+
+#. module: tekinico_personal_finances
+#: selection:wizard.import.accounting.lines,state:0
+msgid "error"
+msgstr "error"
+
+#. module: tekinico_personal_finances
+#: view:wizard.import.accounting.lines:tekinico_personal_finances.view_wizard_import_accounting_lines
+#: view:wizard.set.category.to.lines:tekinico_personal_finances.set_category_to_multiple_lines_view_id
+msgid "or"
+msgstr " ou "
+
+#. module: tekinico_personal_finances
+#: selection:wizard.import.accounting.lines,state:0
+msgid "success"
+msgstr "success"

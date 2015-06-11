@@ -1,0 +1,45 @@
+<openerp>
+    <data>
+
+        <record id="tekinico_accounting_balance_graph" model="ir.ui.view">
+            <field name="name">tekinico.accounting.balance.graph</field>
+            <field name="model">tekinico.accounting.balance</field>
+            <field name="type">graph</field>
+            <field name="arch" type="xml">
+                <graph string="Balance Reporting" type="pivot">
+                    <field name="year" type="row"/>
+                    <field name="month" type="row"/>
+                    <field name="balance" type="measure"/>
+                 </graph>
+            </field>
+        </record>
+
+        <record id="view_tekinico_accounting_balance_filter" model="ir.ui.view">
+            <field name="name">tekinico.accounting.balance.select</field>
+            <field name="model">tekinico.accounting.balance</field>
+            <field name="arch" type="xml">
+                <search string="Search Accounting Balance">
+                   <filter string="This Year" name="thisyear" domain="[('year','=', time.strftime('%%Y'))]" help="Current year's balance"/>
+                   <separator/>
+                   <group expand="0" string="Group By">
+                       <filter string="Year" domain="[]" context="{'group_by' : 'year'}" />
+                       <filter string="Month" domain="[]" context="{'group_by' : 'month'}" />
+                   </group>
+               </search>
+            </field>
+        </record>
+
+         <record id="action_tekinico_accounting_balance_graph" model="ir.actions.act_window">
+            <field name="name">Balance reporting</field>
+            <field name="res_model">tekinico.accounting.balance</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="tekinico_accounting_balance_graph"/>
+            <field name="view_mode">graph</field>
+            <field name="context">{'group_by':['year', 'month'], 'group_by_no_leaf':1 }</field>
+            <field name="search_view_id" ref="view_tekinico_accounting_balance_filter"/>
+        </record>
+
+        <menuitem action="action_tekinico_accounting_balance_graph" id="action_tekinico_accounting_balance" parent="tekinico_finances_reporting_menu" sequence="1"/>
+
+    </data>
+</openerp>

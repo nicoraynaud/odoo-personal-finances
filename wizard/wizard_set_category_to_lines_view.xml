@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="set_category_to_multiple_lines_view_id" model="ir.ui.view">
+            <field name="name">set category to multiple lines view</field>
+            <field name="model">wizard.set.category.to.lines</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Set Category" version="7.0">
+                    <field name="category_id" />
+                    <footer>
+                        <button class="oe_highlight" name="set_category" string="Apply category" type="object" />
+                        <label string="or"/>
+                        <button class="oe_link" special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window name="Set Category"
+                res_model="wizard.set.category.to.lines"
+                src_model="tekinico.accounting.line"
+                view_mode="form"
+                multi="True"
+                target="new"
+                key2="client_action_multi"
+                id="set_category_to_multiple_lines_act"
+                domain="[('id','in',active_ids)]" />
+
+    </data>
+</openerp>
