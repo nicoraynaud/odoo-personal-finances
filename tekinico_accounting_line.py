@@ -8,7 +8,7 @@ _logger = logging.getLogger(__name__)
 class tekinico_accounting_line(osv.osv):
     _name = 'tekinico.accounting.line'
     _description = 'Accounting Line'
-
+    _order = "date desc, date_created desc"
 
     def _get_balance_id(self, cr, uid, ids, name, args, context):
         res = {}
@@ -35,8 +35,6 @@ class tekinico_accounting_line(osv.osv):
         'state': 'new',
         'source': 'manual',
     }
-
-    _order = "date desc date_created desc"
 
     def create(self, cr, uid, vals, context=None):
         if context is None:
