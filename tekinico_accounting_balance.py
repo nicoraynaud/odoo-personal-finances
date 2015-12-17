@@ -9,7 +9,8 @@ class tekinico_accounting_balance(osv.osv):
     _order = "year asc, month asc"
 
     _columns = {
-        'year':fields.integer('Year',readonly=True),
+        'account': fields.char('Account',readonly=True),
+        'year': fields.integer('Year',readonly=True),
         'month':  fields.integer('Month',readonly=True),
         'balance': fields.integer('Balance',readonly=True)
     }
@@ -20,15 +21,18 @@ class tekinico_accounting_balance(osv.osv):
             create or replace view tekinico_accounting_balance as (
                 select row_number() OVER(ORDER BY year, month) as id, * from (
                     select 
+                        taa.label as account,
                         extract(year from date) as year,
                         extract(month from date) as month,
                         sum(sum(credit - debit)) 
-                            over (order by extract(year from date),extract(month from date))
+                            over (order by taa.label, extract(year from date),extract(month from date))
                             as balance
                         from 
-                            tekinico_accounting_line
+                            tekinico_accounting_line tal
+                        inner join
+                            tekinico_accounting_account taa on taa.id = tal.account_id
                         group by 
-                            year,month
+                            year,month,taa.label
                     ) view
             )
         """)

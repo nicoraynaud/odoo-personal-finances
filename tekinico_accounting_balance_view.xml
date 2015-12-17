@@ -9,6 +9,7 @@
                 <graph string="Balance Reporting" type="pivot">
                     <field name="year" type="row"/>
                     <field name="month" type="row"/>
+                    <field name="account" type="col"/>
                     <field name="balance" type="measure"/>
                  </graph>
             </field>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_tekinico_accounting_account_tree" model="ir.ui.view">
+            <field name="name">tekinico accounting account tree</field>
+            <field name="model">tekinico.accounting.account</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top">
+                    <field name="bank"/>
+                    <field name="label"/>
+                    <field name="type"/>
+                    <field name="account_number"/>
+                    <field name="balance"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_tekinico_accounting_accounts_events">
+            <field name="name">Accounts</field>
+            <field name="res_model">tekinico.accounting.account</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain"></field>
+        </record>
+
+        <!-- Menuitems -->
+        <menuitem 
+            id="tekinico_accounting_account_menu"
+            name="Accounts"
+            parent="tekinico_finances_menu"
+            action="action_tekinico_accounting_accounts_events"
+            sequence="1" />
+    </data>
+</openerp>

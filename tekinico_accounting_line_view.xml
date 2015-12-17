@@ -8,6 +8,7 @@
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree editable="top" colors="blue:state=='new';grey:state=='cancelled'">
+                    <field name="account_id"/>
                     <field name="date"/>
                     <field name="description"/>
                     <field name="debit"/>
@@ -25,6 +26,7 @@
                 <search string="Search Accounting lines">
                    <field name="description"
                        filter_domain="[('description','ilike',self)]"/>
+                   <field name="account_id" string="Account" filder_domain="[('account_id','ilike', self)]"/>
                    <field name="category_id" string="Category" filter_domain="[('category_id','ilike', self)]"/>
                    <field name="debit" string="Debit More Than" filter_domain="[('debit','>=', self)]"/>
                    <field name="credit" string="Credit More Than" filter_domain="[('credit','>=', self)]"/>

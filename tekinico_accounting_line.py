@@ -27,7 +27,8 @@ class tekinico_accounting_line(osv.osv):
         'date_effect' : fields.date('Date Effect'),
         'where': fields.char('Place', size=255),
         'category_id': fields.many2one('tekinico.accounting.category', string='Category'),
-        'balance' : fields.function(_get_balance_id, type='integer', store=True, string='Balance')
+        'balance' : fields.function(_get_balance_id, type='integer', store=True, string='Balance'),
+        'account_id': fields.many2one('tekinico.accounting.account', string='Account', required=True)
     }
  
     _defaults = {

@@ -13,7 +13,8 @@
                 "wizard/wizard_import_accounting_lines_view.xml",
                 "wizard/wizard_set_category_to_lines_view.xml",
                 "tekinico_accounting_lines_dashboard.xml",
-                "tekinico_accounting_balance_view.xml"
+                "tekinico_accounting_balance_view.xml",
+                "tekinico_accounting_account_view.xml"
              ],
     "depends" : [],
     "installable": True,
