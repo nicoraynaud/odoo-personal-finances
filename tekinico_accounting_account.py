@@ -23,6 +23,19 @@ class tekinico_accounting_account(osv.osv):
 
         return res
 
+    def _get_balance_ticked_id(self, cr, uid, ids, name, args, context):
+        res = {}
+
+        line_obj = self.pool.get('tekinico.accounting.line')
+        for bid in ids:
+            lines = line_obj.search(cr, uid, [('account_id', '=', bid), ('state', '=', 'ticked')], order='date')
+            res[bid] = 0
+            for line in line_obj.browse(cr, uid , lines, context=context):
+                res[bid] = res[bid] + (line.credit - line.debit)
+
+        return res
+
+
     def _get_balance_future_id(self, cr, uid, ids, name, args, context):
         res = {}
 
@@ -41,7 +54,8 @@ class tekinico_accounting_account(osv.osv):
         'type': fields.selection([('checking','Checking'),('savings','Savings')], 'Type'),
         'account_number': fields.char('Account Number'),
         'balance' : fields.function(_get_balance_id, type='integer', string='Balance'),
-        'balance_future' : fields.function(_get_balance_future_id, type='integer', string='Balance future')
+        'balance_future' : fields.function(_get_balance_future_id, type='integer', string='Balance future'),
+        'balance_ticked' : fields.function(_get_balance_ticked_id, type='integer', string='Balance ticked')
     }
 
 tekinico_accounting_account()
