@@ -13,6 +13,7 @@
                     <field name="type"/>
                     <field name="account_number"/>
                     <field name="balance"/>
+                    <field name="balance_future"/>
                 </tree>
             </field>
         </record>
