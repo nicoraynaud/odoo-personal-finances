@@ -13,7 +13,8 @@
                     <field name="type"/>
                     <field name="account_number"/>
                     <field name="balance"/>
-                    <field name="balance_future"/>
+                    <field name="balance_month"/>
+                    <field name="balance_next_month"/>
                     <field name="balance_ticked"/>
                 </tree>
             </field>
